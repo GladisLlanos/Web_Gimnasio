@@ -15,20 +15,6 @@
       "id": 1
     },
     {
-      "nombre": "Carla",
-      "apellidos": "Domínguez",
-      "email": "carla@example.com",
-      "dni": "23456789",
-      "telefono": "1144889901",
-      "direccion": "Calle Falsa 987",
-      "fechaNacimiento": "1995-09-20",
-      "foto": "https://i.pravatar.cc/150?img=3",
-      "tipoDeMiembroId": 1,
-      "entrenadorId": 1,
-      "eliminado": false,
-      "id": 2
-    },
-    {
       "nombre": "María",
       "apellidos": "Luna",
       "email": "maria@example.com",
@@ -69,42 +55,19 @@
       "entrenadorId": 2,
       "eliminado": false,
       "id": 3
-    },
-    {
-      "nombre": "Luna",
-      "apellidos": "Arroyo",
-      "email": "magaly3591@gmail.com",
-      "dni": "23456765",
-      "telefono": "1122334321",
-      "direccion": "calle 654",
-      "fechaNacimiento": "1995-12-31",
-      "foto": "https://i.ibb.co/tT2pZ6H2/Reportes-jpg.jpg",
-      "tipoDeMiembroId": 1,
-      "entrenadorId": 1,
-      "eliminado": false,
-      "id": 6
     }
   ],
   "entrenadors": [
     {
-      "nombre": "Karen Pérez",
-      "dni": "94325420",
-      "telefono": "11456781",
-      "fechaNacimiento": "2000-10-12",
-      "direccion": "calle 1444",
-      "email": "karenPerez@example.com",
-      "activo": true,
-      "id": 1
-    },
-    {
-      "nombre": "Javier Sandoval",
-      "dni": 6546498,
-      "fechaNacimiento": "1998-11-20T00:00:00.000Z",
+      "nombre": "Javier",
+      "apellido": "Sandoval",
+      "dni": "6546498",
       "telefono": "1144990011",
+      "fechaNacimiento": "",
       "direccion": "calle 123",
       "email": "javier@example.com",
-      "certificacion": "AMM-5047",
       "activo": true,
+      "certificado": "https://i.ibb.co/xqdH4xRV/UML-Salon-jpg.jpg",
       "id": 2
     }
   ],
@@ -257,6 +220,42 @@
       "fechaInicio": "2025-11-09T00:00:00.000Z",
       "fechaFin": "2026-11-09T00:00:00.000Z",
       "id": 7
+    },
+    {
+      "miembroId": 2,
+      "membresiaId": 104,
+      "estadoMembresiaId": 1,
+      "pagoId": 21,
+      "fechaInicio": "2025-11-10T22:53:41.466Z",
+      "fechaFin": "2025-11-11T22:53:41.466Z",
+      "id": 8
+    },
+    {
+      "miembroId": 7,
+      "membresiaId": 102,
+      "estadoMembresiaId": 1,
+      "pagoId": 22,
+      "fechaInicio": "2025-11-10T00:00:00.000Z",
+      "fechaFin": "2026-11-10T00:00:00.000Z",
+      "id": 9
+    },
+    {
+      "miembroId": 8,
+      "membresiaId": 102,
+      "estadoMembresiaId": 1,
+      "pagoId": 23,
+      "fechaInicio": "2025-11-10T00:00:00.000Z",
+      "fechaFin": "2026-11-10T00:00:00.000Z",
+      "id": 10
+    },
+    {
+      "miembroId": 4,
+      "membresiaId": 104,
+      "estadoMembresiaId": 1,
+      "pagoId": 24,
+      "fechaInicio": "2025-11-10T23:27:35.661Z",
+      "fechaFin": "2025-11-11T23:27:35.661Z",
+      "id": 11
     }
   ],
   "pagos": [
@@ -308,6 +307,34 @@
       "metodoPago": "Efectivo",
       "descuentoAplicado": 0,
       "id": 20
+    },
+    {
+      "monto": 8000,
+      "fechaPago": "2025-11-10T22:53:41.419Z",
+      "metodoPago": "QR",
+      "descuentoAplicado": 0,
+      "id": 21
+    },
+    {
+      "monto": 324000,
+      "fechaPago": "2025-11-10T22:56:38.760Z",
+      "metodoPago": "Efectivo",
+      "descuentoAplicado": 36000,
+      "id": 22
+    },
+    {
+      "monto": 342000,
+      "fechaPago": "2025-11-10T23:26:12.273Z",
+      "metodoPago": "QR",
+      "descuentoAplicado": 18000,
+      "id": 23
+    },
+    {
+      "monto": 8000,
+      "fechaPago": "2025-11-10T23:27:35.634Z",
+      "metodoPago": "Efectivo",
+      "descuentoAplicado": 0,
+      "id": 24
     }
   ],
   "estadoMembresias": [
@@ -322,40 +349,31 @@
   ],
   "clases": [
     {
-      "actividadId": 1,
-      "entrenadorId": 1,
-      "fecha": "2025-04-02T00:00:00.000Z",
-      "horaInicio": "18:00",
-      "horaFin": "19:00",
-      "cupo": 19,
-      "dias": [],
-      "id": 1,
-      "actividad": {
-        "id": 1,
-        "nombre": "Funcional",
-        "descripcion": "Entrenamiento completo"
-      },
-      "entrenador": {
-        "nombre": "Karen Pérez",
-        "dni": 94325420,
-        "fechaNacimiento": "1998-08-10T00:00:00.000Z",
-        "telefono": "11456781",
-        "direccion": "calle 1444",
-        "email": "karenPerez@example.com",
-        "certificacion": "MEP-8010",
-        "activo": true,
-        "id": 1
-      }
-    },
-    {
       "actividadId": 2,
       "entrenadorId": 2,
       "fecha": "2028-05-02T00:00:00.000Z",
       "horaInicio": "18:00",
       "horaFin": "19:00",
-      "cupo": 20,
+      "cupo": 19,
       "dias": [],
-      "id": 2
+      "id": 2,
+      "actividad": {
+        "id": 2,
+        "nombre": "Zumba",
+        "descripcion": "Cardio y ritmo"
+      },
+      "entrenador": {
+        "nombre": "Javier",
+        "apellido": "Sandoval",
+        "dni": "6546498",
+        "telefono": "1144990011",
+        "fechaNacimiento": "",
+        "direccion": "calle 123",
+        "email": "javier@example.com",
+        "activo": true,
+        "certificado": "https://i.ibb.co/xqdH4xRV/UML-Salon-jpg.jpg",
+        "id": 2
+      }
     },
     {
       "actividadId": 3,
@@ -365,34 +383,6 @@
       "horaFin": "21:00",
       "cupo": 10,
       "id": 3
-    },
-    {
-      "actividadId": 2,
-      "entrenadorId": 1,
-      "fecha": "2025-11-11T00:00:00.000Z",
-      "horaInicio": "17:00",
-      "horaFin": "18:00",
-      "cupo": 7,
-      "dias": [
-        "Martes",
-        "Viernes"
-      ],
-      "id": 4,
-      "actividad": {
-        "id": 2,
-        "nombre": "Zumba",
-        "descripcion": "Cardio y ritmo"
-      },
-      "entrenador": {
-        "nombre": "Karen Pérez",
-        "dni": "94325420",
-        "telefono": "11456781",
-        "fechaNacimiento": "2000-10-12",
-        "direccion": "calle 1444",
-        "email": "karenPerez@example.com",
-        "activo": true,
-        "id": 1
-      }
     }
   ],
   "actividads": [
@@ -437,6 +427,16 @@
       "miembroId": 6,
       "claseId": 4,
       "id": 6
+    },
+    {
+      "miembroId": 8,
+      "claseId": 1,
+      "id": 7
+    },
+    {
+      "miembroId": 4,
+      "claseId": 2,
+      "id": 8
     }
   ],
   "tiposDeAsistencia": [
@@ -465,15 +465,27 @@
       "tipoDeAsistenciaId": 1,
       "fecha": "2025-11-10T22:46:37.670Z",
       "id": 2
+    },
+    {
+      "miembroXClaseId": "8",
+      "tipoDeAsistenciaId": "1",
+      "fecha": "2025-11-10T23:32",
+      "id": 3
+    },
+    {
+      "miembroId": 1,
+      "tipoDeAsistenciaId": 1,
+      "fecha": "2025-11-10T23:33:21.934Z",
+      "id": 4
     }
   ],
   "asistenciasEntrenadores": [
     {
-      "entrenadorId": "1",
-      "claseId": "1",
+      "entrenadorId": "2",
+      "claseId": "2",
       "tipoDeAsistenciaId": "1",
-      "fecha": "2025-11-09T22:20",
-      "id": 3
+      "fecha": "2025-11-10T23:33",
+      "id": 1
     }
   ]
 }

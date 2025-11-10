@@ -67,8 +67,10 @@ export const renderizarVistaEntrenadores = async (contenedor) => {
             <div>
               <label>Nombre</label>
               <input type="text" id="nombre" required>
+              <label>Apellido</label>
+              <input type="text" id="apellido" required>
               <label>DNI</label>
-              <input type="number" id="dni" required>
+              <input type="text" id="dni" inputmode="numeric" pattern="[0-9]*" required>
               <label>Teléfono</label>
               <input type="text" id="telefono" required>
               <label>Activo</label>
@@ -129,6 +131,8 @@ const renderizarTabla = (contenedor) => {
   const filtrados = listaEntrenadores.filter(
     (e) =>
       (e.nombre || "").toLowerCase().includes(termino) ||
+      (e.apellido || "").toLowerCase().includes(termino) ||
+      `${(e.nombre||"")} ${(e.apellido||"")}`.toLowerCase().includes(termino) ||
       String(e.dni || "").includes(termino) ||
       (e.email || "").toLowerCase().includes(termino)
   );
@@ -147,7 +151,7 @@ const renderizarTabla = (contenedor) => {
             (e) => `
         <tr>
           <td>${e.id}</td>
-          <td>${e.nombre}</td>
+          <td>${[e.nombre, e.apellido].filter(Boolean).join(' ')}</td>
           <td>${e.dni}</td>
           <td>${e.telefono}</td>
           <td>${e.direccion}</td>
@@ -234,6 +238,7 @@ const adjuntarEventos = (contenedor) => {
       try {
         await apiActualizarEntrenador(id, {
           nombre: entrenador.nombre || "",
+          apellido: entrenador.apellido || "",
           dni: entrenador.dni || "",
           telefono: entrenador.telefono || "",
           fechaNacimiento: entrenador.fechaNacimiento || "",
@@ -264,6 +269,7 @@ const abrirModal = (entrenador = null) => {
   if (entrenador) {
     modal.querySelector("#modal-titulo").textContent = "Editar Entrenador";
     form.nombre.value = entrenador.nombre || "";
+    form.apellido.value = entrenador.apellido || "";
     form.dni.value = entrenador.dni || "";
     form.telefono.value = entrenador.telefono || "";
     form.fechaNacimiento.value = entrenador.fechaNacimiento || "";
@@ -288,6 +294,19 @@ const abrirModal = (entrenador = null) => {
     if (certInput) certInput.required = true;
     const certNombre = modal.querySelector('#certificado-nombre');
     if (certNombre) certNombre.textContent = 'Ningún archivo seleccionado';
+  }
+
+  // wiring del botón personalizado y nombre (debe estar fuera de onsubmit)
+  const btnSeleccionar = modal.querySelector('#btn-cert-select');
+  const inputFile = modal.querySelector('#certificado');
+  const labelNombre = modal.querySelector('#certificado-nombre');
+  if (btnSeleccionar && inputFile) {
+    btnSeleccionar.onclick = () => inputFile.click();
+    inputFile.onchange = () => {
+      const file = inputFile.files?.[0];
+      if (file && labelNombre) labelNombre.textContent = file.name;
+      if (!file && labelNombre) labelNombre.textContent = 'Ningún archivo seleccionado';
+    };
   }
 
   form.onsubmit = async (e) => {
@@ -316,6 +335,7 @@ const abrirModal = (entrenador = null) => {
 
     const data = {
       nombre: form.nombre.value,
+      apellido: form.apellido.value,
       dni: form.dni.value,
       telefono: form.telefono.value,
       fechaNacimiento: form.fechaNacimiento.value,
@@ -325,17 +345,6 @@ const abrirModal = (entrenador = null) => {
       certificado: urlCertificado || ""
     };
 
-  // wiring del botón personalizado y nombre
-  const btnSeleccionar = modal.querySelector('#btn-cert-select');
-  const inputFile = modal.querySelector('#certificado');
-  const labelNombre = modal.querySelector('#certificado-nombre');
-  if (btnSeleccionar && inputFile) {
-    btnSeleccionar.onclick = () => inputFile.click();
-    inputFile.onchange = () => {
-      const file = inputFile.files?.[0];
-      if (file && labelNombre) labelNombre.textContent = file.name;
-    };
-  }
     if (id) {
       await apiActualizarEntrenador(id, data);
     } else {

@@ -19,7 +19,7 @@ export const apiCrearEntrenador = async (entrenador) => {
 
 export const apiActualizarEntrenador = async (id, entrenador) => {
   const res = await fetch(`${URL_BASE}/entrenadors/${id}`, {
-    method: "PUT",
+    method: "PATCH",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(entrenador),
   });
