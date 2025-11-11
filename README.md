@@ -44,3 +44,5 @@ Proyecto académico desarrollado para la materia **Ingeniería de Software I** e
 - Luego en la terminar del editor instalar las dependencias con el comando: npm install
 - Luego activar el servidor mediante el comando: npm run server
 - Finalmente para abrir el proyecto en el navegador escribir el comando: npm run dev
+## 📁 Finalizacion del proyecto
+-El contenido finalizado se encuentra en la rama funcionando, en resumen tiene casi todas las funcionalidades concretadas, las falencias que tienen son las validaciones de datos, si se quiere llegar a utilizar en un futuro.
